@@ -15,4 +15,3 @@ const products = [
         img: "https://via.placeholder.com/200"
     }
 ];
- 
