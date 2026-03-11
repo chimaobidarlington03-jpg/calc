@@ -1,3 +1,5 @@
+let savedProducts = JSON.parse(localStorage.getItem("products")) || [];
+products.push(...savedProducts);
 let cart = [];
 const phone = "2347049884342"; // Put your WhatsApp number
 
@@ -10,7 +12,6 @@ products.forEach(product => {
 <img src="${product.img}">
 <h3>${product.name}</h3>
 <p class="price">₦${product.price}</p>
-<p>Stock: ${product.stock}</p>
 <button onclick="addToCart('${product.name}',${product.price})">Add to Cart</button>
 `;
     productList.appendChild(card);
