@@ -2,7 +2,7 @@ const products = [
     {
         name: "Sneakers",
         price: 15000,
-        img src="https://i.ibb.co/1j3yBBV/20260312-135740.jpg"
+        img: "https://i.ibb.co/1j3yBBV/20260312-135740.jpg"
     },
     {
         name: "T-Shirt",
