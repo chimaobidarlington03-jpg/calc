@@ -1,49 +1,23 @@
+let savedProducts = JSON.parse(localStorage.getItem("products")) || [];
+products.push(...savedProducts);
 let cart = [];
-const phone = "2347049884342";
-
-const sheetURL = "https://docs.google.com/spreadsheets/d/1h1AOC9Y7Kp-jTobt4DKLOnFtBY5gzo9Me87qJp2i7LI/gviz/tq?tqx=out:csv";
-
-fetch(sheetURL)
-.then(res => res.text())
-.then(data => {
-
-let rows = data.split("\n").slice(1);
-
-rows.forEach(row => {
-
-let cols = row.split(",");
-
-let product = {
-name: cols[0],
-price: cols[1],
-img: cols[2]
-};
-
-createProduct(product);
-
-});
-
-});
-
-function createProduct(product){
+const phone = "2347049884342"; // Put your WhatsApp number
 
 const productList = document.getElementById("productList");
 
-const card = document.createElement("div");
-card.className = "card";
-
-card.innerHTML = `
+products.forEach(product => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
 <img src="${product.img}">
 <h3>${product.name}</h3>
 <p class="price">₦${product.price}</p>
-<button onclick="addToCart('${product.name}',${product.price})">
-Add to Cart
-</button>
+<p>Stock: ${product.stock}</p>
+<button onclick="addToCart('${product.name}',${product.price})">Add to Cart</button>
 `;
+    productList.appendChild(card);
+});
 
-productList.appendChild(card);
-
-}
 function addToCart(name, price){
     cart.push({name, price});
     alert(name + " added to cart");
