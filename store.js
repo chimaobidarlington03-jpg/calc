@@ -12,7 +12,6 @@ products.forEach(product => {
 <img src="${product.img}">
 <h3>${product.name}</h3>
 <p class="price">₦${product.price}</p>
-<p>Stock: ${product.stock}</p>
 <button onclick="addToCart('${product.name}',${product.price})">Add to Cart</button>
 `;
     productList.appendChild(card);
