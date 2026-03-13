@@ -124,16 +124,6 @@ document.getElementById("price").value=""
 document.getElementById("img").value=""
 }
 
-let products=JSON.parse(localStorage.getItem("products")) || []
-
-products.push(product)
-
-localStorage.setItem("products",JSON.stringify(products))
-
-loadProducts()
-
-}
-
 function deleteProduct(index){
 
 let products=JSON.parse(localStorage.getItem("products")) || []
