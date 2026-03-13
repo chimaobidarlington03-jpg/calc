@@ -12,5 +12,5 @@ const products = [
         name: "Cap",
         price: 3000,
         img: "https://via.placeholder.com/200"
-    }
+    },
 ];
