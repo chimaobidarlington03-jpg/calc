@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Heart ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+
+background:linear-gradient(180deg,#120018,#32002d,#ff2d7d);
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+
+}
+
+/* Stars */
+
+.star{
+
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+from{opacity:.2;}
+to{opacity:1;}
+
+}
+
+.card{
+
+width:90%;
+max-width:420px;
+padding:30px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(15px);
+border-radius:25px;
+text-align:center;
+box-shadow:0 0 40px rgba(255,255,255,.15);
+
+}
+
+/* Heart */
+
+.heart{
+
+font-size:80px;
+animation:beat 1s infinite;
+margin-bottom:20px;
+
+}
+
+@keyframes beat{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.2);
+}
+
+}
+
+#text{
+
+font-size:18px;
+line-height:32px;
+min-height:220px;
+
+}
+
+img{
+
+margin-top:20px;
+width:180px;
+height:180px;
+border-radius:20px;
+object-fit:cover;
+border:4px solid white;
+display:none;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+
+}
+
+button{
+
+margin-top:30px;
+padding:15px 40px;
+border:none;
+border-radius:40px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+background:white;
+color:#ff2d7d;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="heart">❤️</div>
+
+<div id="text"></div>
+
+<img id="photo" src="https://i.ibb.co/xS0NCXhC/20260623-165523.jpg">
+
+<button onclick="location='promise.html'">
+One More Thing ❤️
+</button>
+
+</div>
+
+<script>
+
+/* Stars */
+
+for(let i=0;i<120;i++){
+
+let s=document.createElement("div");
+
+s.className="star";
+
+s.style.left=Math.random()*100+"vw";
+
+s.style.top=Math.random()*100+"vh";
+
+s.style.animationDelay=Math.random()*2+"s";
+
+document.body.appendChild(s);
+
+}
+
+/* Typewriter */
+
+const message=
+
+`Loveth...
+
+If I could choose again...
+
+I'd still choose you.
+
+Maybe not because you're perfect...
+
+But because you make ordinary days feel special.
+
+Thank you for every smile...
+
+Every conversation...
+
+Every laugh...
+
+Every moment we've shared.
+
+Whenever I think about my future...
+
+Somehow...
+
+You're always there.
+
+❤️`;
+
+let i=0;
+
+function type(){
+
+if(i<message.length){
+
+document.getElementById("text").innerHTML+=message.charAt(i);
+
+i++;
+
+if(i===message.length-2){
+
+document.getElementById("photo").style.display="block";
+
+}
+
+setTimeout(type,40);
+
+}
+
+}
+
+type();
+
+</script>
+
+</body>
+</html>
