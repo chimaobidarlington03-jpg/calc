@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Memories ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#ffb6d9,#ff6ea8);
+overflow:hidden;
+color:white;
+}
+
+.container{
+padding:30px 20px 100px;
+text-align:center;
+}
+
+h1{
+font-size:34px;
+margin-bottom:10px;
+}
+
+p{
+font-size:18px;
+margin-bottom:30px;
+opacity:.95;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.photo{
+position:relative;
+overflow:hidden;
+border-radius:20px;
+animation:fadeUp .8s ease;
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+.photo img{
+width:100%;
+height:220px;
+object-fit:cover;
+transition:.5s;
+}
+
+.photo:hover img{
+transform:scale(1.08);
+}
+
+.caption{
+position:absolute;
+bottom:0;
+width:100%;
+background:rgba(0,0,0,.45);
+padding:10px;
+font-size:14px;
+}
+
+button{
+margin:35px auto;
+display:block;
+padding:15px 40px;
+font-size:18px;
+border:none;
+border-radius:40px;
+background:white;
+color:#ff3b8d;
+font-weight:bold;
+cursor:pointer;
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Beautiful You ❤️</h1>
+
+<p>
+Every picture reminds me how lucky I am to have someone as amazing as you.
+</p>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="https://i.ibb.co/zVqyWqv8/1783539658218.jpg">
+<div class="caption">The smile that brightens my day ☀️</div>
+</div>
+
+<div class="photo">
+<img src="https://i.ibb.co/2J9tdT5/1783603189229.jpg">
+<div class="caption">Absolutely beautiful 💖</div>
+</div>
+
+<div class="photo">
+<img src="https://i.ibb.co/Y4tMbTKd/1783603211291.jpg">
+<div class="caption">Every picture tells a story ❤️</div>
+</div>
+
+<div class="photo">
+<img src="https://i.ibb.co/Y4tMbTKd/1783603211291.jpg">
+<div class="caption">My favorite person 🌹</div>
+</div>
+
+<div class="photo">
+<img src="https://i.ibb.co/RpT1VLFg/1783603197020.jpg">
+<div class="caption">Pretty without even trying ✨</div>
+</div>
+
+<div class="photo">
+<img src="https://i.ibb.co/r2rGV2Nk/1783603193137.jpg">
+<div class="caption">My happiness has a name... Loveth ❤️</div>
+</div>
+
+</div>
+
+<button onclick="location='heart.html'">
+Continue ❤️
+</button>
+
+</div>
+
+<script>
+
+/* Floating Hearts */
+
+for(let i=0;i<35;i++){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤";
+
+heart.style.position="fixed";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.top="100vh";
+
+heart.style.fontSize=(12+Math.random()*20)+"px";
+
+heart.style.opacity=.35;
+
+heart.style.animation=`rise ${5+Math.random()*6}s linear infinite`;
+
+document.body.appendChild(heart);
+
+}
+
+const style=document.createElement("style");
+
+style.innerHTML=`
+
+@keyframes rise{
+
+0%{
+transform:translateY(0);
+opacity:0;
+}
+
+20%{
+opacity:.4;
+}
+
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+
+}
+
+`;
+
+document.head.appendChild(style);
+
+</script>
+
+</body>
+</html>
